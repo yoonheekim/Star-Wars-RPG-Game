@@ -1,0 +1,66 @@
+body{
+    background-image: url("../images/Star-Wars.jpeg");
+    /* background-size: cover;    */
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+.h1{
+    color: white;
+}
+div, button{
+    margin-bottom: 10px;
+}
+#logo{
+    width: 400px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#game_icon{
+    width: 200px;
+    height: auto;
+}
+p{
+    clear: both;
+    color: white;
+}
+.characterBox {
+    width: 200px;
+    float: left;
+    padding: 10px;
+    margin-right: 10px;
+    /* margin-bottom: 10px; */
+    background-color: lightgray;
+    text-align: center;
+}
+.characterBox > p{
+    color: black;
+    margin: 0px;
+}
+.enemiesBox{
+    background-color: red;
+    width: 200px;
+}
+#gameInfo{
+    clear: both;
+}
+#startArea > div {
+    border: 3px solid #2f557f;
+}
+#yourCharacter > div {
+    border: 4px double #2f557f;
+}
+#enemiesArea > div > div{
+    border: 3px solid #e36520;
+}
+#defenderArea > div {
+    border: 4px double #e36520;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+#restart_button{
+    visibility: hidden;
+}

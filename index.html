@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Star Wars RPG Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+    <script src="javascript/game.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class = "row">
+            <div class="col">
+                <p class="h1">Star Wars RPG Game</p>
+            </div>
+        </div>
+        
+        <div id="startArea"></div>
+        <p>Your Character</p>
+        <div id="yourCharacter"></div>
+        <p>Enemies Availavle To Attack</p>
+        <div id="enemiesArea"></div>
+        <p>Fight Section</p>
+        <button type="button" class="btn btn-primary disabled">Attack</button>
+        <p>Defender</p>
+        <div id="defenderArea"></div>
+        <br>
+        <div id="gameInfo"></div>
+
+    </div>
+
+    <script>
+    var check1 = true;
+    var check2 = true;
+
+    var Health_Points = 0;
+    var Attack_Power = 0;
+    var Counter_Attack_Power = 0;
+
+    var character = {
+        "Obi-Wan Kenobi": {
+            name: "Obi-Wan Kenobi",
+            image: "images/obi.jpg",
+            Health_Points: 120,
+            Attack_Power: 20,
+            Counter_Attack_Power: 10
+        },
+        "Luke Skywalker" : {
+            name: "Luke Skywalker",
+            image: "#",
+            Health_Points: 100,
+            Attack_Power: 15,
+            Counter_Attack_Power: 15
+        },
+        "Darth Sidious" : {
+            name: "Darth Sidious",
+            image: "#",
+            Health_Points: 150,
+            Attack_Power: 10,
+            Counter_Attack_Power: 5
+        },
+        "Darth Maul" : {
+            name: "Darth Maul",
+            image: "#",
+            Health_Points: 180,
+            Attack_Power: 5,
+            Counter_Attack_Power: 10
+        }
+    };
+
+    
+    var defender;
+
+    $(document).ready(function () {
+
+        for(var key in character){
+            var obj = character[key];
+            alert("-----------------");
+            alert(key[prop].name);
+            for(var prop in obj){
+            
+                alert(prop+" = "+obj[prop]);
+            }
+        }
+
+        // for(var i=0; i< Object.keys(character).length; i++){
+        //     var box = $("<div>");
+        //     var name = $("<p>")
+        //         alert(character.name);
+        //         name.append(character.name);
+        //         name.addClass("name")
+        //     box.append(name);
+        //     var img = $("<img>");
+        //     img.attr("src", character[i].image); //character[i].image
+        //     box.append(img);
+        //     box.append(character[i].power);
+        //     box.addClass("characterBox available");
+        //     $("#startArea").append(box);
+        // };
+
+
+
+
+        $(".characterBox").on("click", function(){
+            if(check1){
+                $("#yourCharacter").append(this);
+                var box = $("#startArea");
+                $("#enemiesArea").append(box);
+                $(this).removeClass("available");
+                alert($(this).find("p.name").get());
+                check1 = false;
+            } else if(check2) {
+                if($(this).hasClass("available")){
+                    $("#defenderArea").append(this);
+
+                    check2 = false;
+                    $(".btn").removeClass("disabled");
+                }     
+            }          
+        });
+
+
+        $(".btn").on("click", function(){
+            var defender = $("#defenderArea").children.
+
+            document.getElementById("gameInfo").innerHTML = "You attacked ";
+        });
+
+    
+    });
+
+    
+
+    
+
+
+    </script>
+    
+</body>
+</html>
